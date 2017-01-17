@@ -1,0 +1,9 @@
+body {
+    background: url("bg1.jpg") no-repeat center center;
+    background-size: cover;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    color: white;
+    font-family: Arial ;
+}

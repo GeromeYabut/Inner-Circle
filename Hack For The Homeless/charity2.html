@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style2.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap.css">
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+        <script src="https://www.parsecdn.com/js/parse-1.3.5.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script>
+        Parse.initialize("yMODpvouaFvFIUuX7VqolVmbgvsU1k8QonLywN08", "RULQJa8FPVoP5NM6jZScMQMRLbz3JIJ2ekipYW5z");
+        var currentUser = Parse.User.current();
+        if (currentUser) {
+            var user=Parse.User.current().getUsername();
+            console.log(user);// do stuff with the user
+        } else {
+            location.href="login.html";// show the signup or login page
+        }
+    </script>  
+        <title>Charity</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="HFTH.html">InnerCircle</a>
+            </div>
+            <div>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="file:///Users/jisoopark/Desktop/hackathon/charity.html#">Our House</a></li>
+                    <li><a href="#">Barnabus</a></li>
+                    <li><a href="#">Salvation Army</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br>
+    <br>
+    <div class="jumbotron">
+        <h1>Our House</h1>
+        <p>Our House is a nonprofit charity serving homeless with a network of shelters and <br>offering the homeless myriads of helpful opportunities.<br>Come interact with us!</p>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <h3>Future Events</h3>
+            <ul>
+                <li>Soup Kitchen</li>
+                    <p> -alsdfhalsdjfajdlajdlakf</p>
+                <li>Workshop</li>
+                    <p>-akdsjfalskdjfalksdjflaksjdf</p>
+                <li>Training</li>
+                    <p>-sdhflaksjflakjflkasdjfdkjflaksdjfa</p>
+        </div>
+        <div class="col-sm-8" style="background-color:#fdfbc9;">
+            <h3>Upcoming Event!</h3>
+                <ul>
+                    <li><h4>Workshop!</h4></li>
+                    <li class="events"><strong>Date</strong>: Monday, March 9, 2015</li>
+                    <li class="events"><strong>Time</strong>: 1PM-2PM </li>
+                    <li class="events"><strong>Location</strong>: Somewhere</li>
+                </ul>
+        </div>
+        <div class="col-sm-7">
+            <h5>Beyonce posted:</h5>
+            <p>This is so awesome!
+            <p class="right">Feb 28, 2015 at 6:30 PM</p>
+        </div>
+
+        <div class="col-sm-3" style="background-color:white">
+        </div>
+        <div class="col-sm-6">
+<script type="text/javascript">
+
+Parse.initialize("yMODpvouaFvFIUuX7VqolVmbgvsU1k8QonLywN08", "RULQJa8FPVoP5NM6jZScMQMRLbz3JIJ2ekipYW5z");
+var main = function()
+{
+    //var results = JSON.parse(localStorage.getItem('Posts'));
+
+    var Posts = Parse.Object.extend("Posts");
+    var query = new Parse.Query(Posts);
+
+    query.get("3j1Nlmem87", {
+  success: function(post) {
+    console.log("success");// The object was retrieved successfully.
+  },
+  error: function(object, error) {
+    // The object was not retrieved successfully.
+    // error is a Parse.Error with an error code and message.
+  }
+});
+    var results = Posts.get("Post");
+
+    
+    console.log(results);
+    for(var i = 0;i < results.length;i++)
+        {
+            var posts = results[i];
+            //title
+            $('<div id=' +i +' class="box">').appendTo('#Title');
+
+            $('<ul id=ul' + i + '>').text(posts.Title).appendTo('#' + i);
+            //location
+            $('<li>').text("Text").appendTo('#ul' + i);    
+            $('<li id="inline">').text(posts.Post).appendTo('#ul' + i);
+            // $('<ul id=' +i +'>').text(posts.Location).appendTo('#matches');
+            // //Description
+            $('<li>').text("Created at").appendTo('#ul' + i);
+             $('<li id="inline">').text(posts.createdAt).appendTo('#ul' + i);
+            // //Date
+            // //$('<li>').text(posts.createdAt.getMonth()).appendTo('#matches');
+            // //Provide/ receive + what item 
+            $('<li>').text(posts.ProvideRecieve + " " + posts.ItemHouseFood).appendTo('#ul' + i);
+            // //Task
+            $('<li>').text(posts.Exchange).appendTo('#ul' + i);
+            //$('<li>').text(posts.User.username).appendTo('#matches');
+            //$('<li>').text(posts.User.email).appendTo('#matches');
+        }
+    localStorage.removeItem('posts');
+}
+$(document).ready(main);
+
+
+</script>
+            </form>
+    </div>
+</body>
+</html>
+
+
+
+

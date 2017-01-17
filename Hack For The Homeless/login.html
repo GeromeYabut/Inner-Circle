@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+                <link rel="stylesheet" type="text/css" href="homeless.css">
+                <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+        <script src="https://www.parsecdn.com/js/parse-1.3.5.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+                    </head>
+    
+    <body>
+        <div class="container">
+            <h2>Login To Inner Circle</h2>
+            <form role="form">
+                <!--
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="user" placeholder="Enter email">
+                        </div>
+                -->
+                <div class="form-group">
+                    <label for="name"> Username:</label>
+                    <input type="name" class="form-control" id="name" placeholder = "Enter Username">
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Password:</label>
+                    <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+                        </div>
+                <div class="checkbox">
+                    <label><input type="checkbox"> Remember me</label>
+                </div>
+                <button type="submit" class="btn btn-default" id="clickMe"> Submit </button>
+            </form>
+        </div>
+
+        <script type="text/javascript">
+        document.getElementById("clickMe").addEventListener("click", logIn);
+
+        Parse.initialize("yMODpvouaFvFIUuX7VqolVmbgvsU1k8QonLywN08", "RULQJa8FPVoP5NM6jZScMQMRLbz3JIJ2ekipYW5z");
+
+
+        function logIn(){
+        Parse.User.logIn(document.getElementById("name").value, document.getElementById("pwd").value, {
+            success: function(user) {
+                console.log("yo!!");
+                //console.log(location + " " + ihf + " " + offer);
+                location.href="bulletin.html";
+        // Do stuff after successful login.
+            },
+            error: function(user, error) {
+            alert("error");// The login failed. Check error to see why.
+            }
+        });
+
+        event.preventDefault();
+        }
+        </script>
+    </body>
+</html>

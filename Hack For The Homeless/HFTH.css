@@ -1,0 +1,133 @@
+nav {
+	background-color: #fff;
+	border: 1px solid #dedede;
+	border-radius: 4px;
+	box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
+	color: #888;
+	display: block;
+	margin: 8px 22px 8px 22px;
+	overflow: hidden;
+	width: 90%; 
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+}
+
+nav ul li {
+		display: inline-block;
+		list-style-type: none;
+		
+		-webkit-transition: all 0.2s;
+		-moz-transition: all 0.2s;
+		-ms-transition: all 0.2s;
+		-o-transition: all 0.2s;
+		transition: all 0.2s; 
+	}
+	
+nav > ul > li > a {
+			color: #aaa;
+			display: block;
+			line-height: 56px;
+			padding: 0 24px;
+			text-decoration: none;
+		}
+
+
+body{
+		background: url("http://startupphenomenon.com/2013/wp-content/uploads/2013/09/city_by_the_bay_1232.jpg") center center;
+	background-size:cover;
+	width: 100%;
+	min-height: 100vh;
+	height: auto; 
+}
+
+#background1{
+}
+
+.jumbotron{
+	background-color: rgba(175,175,175,0.6);
+	font-family: Arial;
+
+}
+
+span{
+	color:white;
+}
+
+
+circles{
+    width: 80%;
+    height: 200px;
+    background: aqua;
+    margin: auto;
+    
+}
+
+
+#circle1{
+background-color: blue;
+opacity:0.6;
+width: 100px; 
+height: 100px; 
+border: 2px solid;
+border-radius: 50%
+float: left;
+
+}
+
+#circle1 p{
+	margin:5%;
+	font-weight:bold;
+	color:#000000;
+}
+
+#circle2{
+	background-color: blue;
+	opacity:0.6;
+	width: 100px; 
+	height: 100px; 
+	border: 2px solid;
+	border-radius: 50%
+}
+
+.circle {
+
+margin-left: auto;
+margin-right: auto;
+border-radius: 50%;
+width: 100%;
+position: relative;
+
+background-color: rgba(128,128,128,0.4);
+}
+
+.circle div{
+	
+	margin: 0;
+   position: relative;             /* 2 */
+   top: 50%;                         /* 3 */
+   width:50%;
+   transform: translate(50%, -50%) }   /* 4 */
+}
+
+.circle div p{
+	text-align: right;
+}
+
+.circle div h2{
+	color:white;
+	font-family: "Arial";
+}
+
+.col-md-6{
+}
+
+.bottom{
+	background-color: rgba(0,0,0,0.5);
+	color:white;
+	font-family:Arial;
+
+}
+

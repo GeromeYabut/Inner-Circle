@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+                <link rel="stylesheet" type="text/css" href="homeless.css">
+                <script src="https://www.parsecdn.com/js/parse-1.3.5.min.js"></script>
+        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>-->
+         <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+
+    <script type="text/javascript">
+    Parse.initialize("yMODpvouaFvFIUuX7VqolVmbgvsU1k8QonLywN08", "RULQJa8FPVoP5NM6jZScMQMRLbz3JIJ2ekipYW5z");
+
+    var currentUser = Parse.User.current();
+        if (currentUser) {
+            var user=Parse.User.current().getUsername();
+            console.log(user);// do stuff with the user
+        } else {
+            location.href="login.html";// show the signup or login page
+        }
+
+    function fPost(){
+    var Posts = Parse.Object.extend("Posts");
+    var post = new Posts();
+
+    post.set("Post", document.getElementById("Text").value);
+    post.save(null, {
+    success: function(object) {
+      alert("Succes");
+    },
+    error: function(model, error) {
+      alert("fail");
+    }
+  });
+    event.preventDefault();
+    };
+
+
+    </script>
+
+
+    </head>
+    
+    <body>
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form role="form">
+                <div class="form-group">
+                    <label for="Text">Message:</label>
+                    <textarea type="text" class="form-control" rows="8" id="Text"> </textarea>
+                        </div>
+                <button type="submit" class="btn btn-default" id="clickMe" >Submit</button>
+            </form>
+        </div>
+        <script type="text/javascript">  document.getElementById("clickMe").addEventListener("click", fPost );
+</script>
+
+    </body>
+</html>
+
+
